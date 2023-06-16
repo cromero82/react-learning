@@ -1,8 +1,20 @@
+import { Fragment } from 'react'
 import './App.css'
-import Message from './Message'
 
 function App() {
-  return <div><Message /></div>
+
+  return (
+    <>
+      <h1>List</h1>
+      <ul className="list-group">
+        <li className="list-group-item disabled">Cras justo odio</li>
+        <li className="list-group-item">Dapibus ac facilisis in</li>
+        <li className="list-group-item">Morbi leo risus</li>
+        <li className="list-group-item">Porta ac consectetur ac</li>
+        <li className="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </ >
+  );
 }
 
 export default App
