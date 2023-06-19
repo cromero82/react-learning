@@ -6,7 +6,7 @@ const CityItem: React.FC<any> = ({ cityItem }) => {
     }
 };
 
-// using interface definition was desabled
+// using interface definition was disabled
 // ...
 // interface CityItemProps {
 //     city: string;
