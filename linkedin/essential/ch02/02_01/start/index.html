@@ -15,22 +15,33 @@
 
     <script type="text/babel">
 
-        class Car {
-            constructor(name) {
-                this.brand = name;
-            }
+
+        function HeadersCustom() {
+            return (
+                <header>
+                    <h1>Your wellcome</h1>
+                </header>
+            )
         }
 
-        const mycar = new Car("Ford");
-
-        let appleVar = "apple!";
+        function SectionMenu() {
+            return (
+                <section>
+                    <p> Here you can find best food </p>
+                </section>
+            );
+        }
+        function App() {
+            return (
+                <div>
+                    <HeadersCustom />
+                    <SectionMenu />
+                </div>
+            )
+        }
 
         ReactDOM.render(
-            <ul>
-                <li> {appleVar}</li>
-                <li> before text </li>
-                <li> {mycar.brand} </li>
-            </ul>,
+            <App />,
             document.getElementById("root")
         );
     </script>
