@@ -15,11 +15,21 @@
 
     <script type="text/babel">
 
+        class Car {
+            constructor(name) {
+                this.brand = name;
+            }
+        }
+
+        const mycar = new Car("Ford");
+
+        let appleVar = "apple!";
+
         ReactDOM.render(
             <ul>
-                <li> apple</li>
-                <li> cowboy</li>
-                <li> sad </li>
+                <li> {appleVar}</li>
+                <li> before text </li>
+                <li> {mycar.brand} </li>
             </ul>,
             document.getElementById("root")
         );
