@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js" crossorigin></script>
+    <title>React *</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        const dishes = [
+            "Black bean soup",
+            "Macaroni and Cheese",
+            "Salmon and Potatoes"
+        ];
+
+        const dishObjects = dishes.map((dish, i) => (
+            {
+                id: i,
+                tittle: dish
+            }
+        )
+        );
+
+        function HeadersCustom(props) {
+            console.log(props)
+            return (
+                <header>
+                    <h1>Your wellcome {props.clientName}</h1>
+                </header>
+            )
+        }
+
+        function SectionMenu(props) {
+            return (
+                <section>
+                    <p> Here you can find best food {props.typeFood}  & {props.typeFood2}</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSffrNBCF_1MxswixGBJXdKaQuFMsyPmG79v29IoEOqQwghAd7f7jKGw_P_NO6hO4gQPx8&usqp=CAU"
+                        height="180" alt="picture-restaurant" />
+                    <ul>
+                        {props.dishes.map((dish) => (
+                            <li key={dish.i}>{dish.tittle}</li>
+                        ))}
+
+                    </ul>
+                </section >
+            );
+        }
+
+        function App() {
+            let saladVar = "salad"
+            return (
+                <React.Fragment>
+                    <HeadersCustom clientName="John" />
+                    <SectionMenu typeFood="roost meal" typeFood2={saladVar} dishes={dishObjects} />
+                    <Footer
+                        year={new Date().getFullYear()}
+                    />
+                </React.Fragment>
+            )
+        }
+
+        function Footer(props) {
+            return (
+                <footer>
+                    <p> Copyright {props.year}</p>
+                </footer>
+            );
+        }
+
+        ReactDOM.render(
+            <App />,
+            document.getElementById("root")
+        );
+    </script>
+</body>
+
+</html>
